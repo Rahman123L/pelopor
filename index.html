@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Si Pelopor</title>
+
+    <link href="style.css" rel="stylesheet">
+    <link href="svgs/logo.svg" rel="shortcut icon" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <main class="">
+        <div class="p-5 space-y-2">
+            <img class="w-28 h-w-28 object-contain mx-auto"
+                src="https://th.bing.com/th/id/OIP.1l8NmpOoFyMXIxhcvAZg9wAAAA?w=349&h=375&rs=1&pid=ImgDetMain">
+            <div class="text-center text-black">
+                <h1 class="text-2xl font-bold">SI-PELOPOR</h1>
+                <p class="text-sm font-extrabold">DINAS</p>
+                <p class="text-base font-bold">PEMBERDAYAAN MASYARAKAT DESA</p>
+                <P class="text-base font-bold">KABUPATEN LABUHANBATU</P>
+            </div>
+            <div class="flex justify-center pt-5">
+                <select onchange="selectDesa(event)" id="select-desa" class="text-center text-sm font-bold bg-blue-300 py-1 px-4 rounded-2xl">
+                </select>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const select = document.getElementById('select-desa');
+
+        const desa = [
+            'PILIH DESA',
+            'KAMPUNG PADANG',
+            "JANJI"
+        ];
+
+        desa.forEach((nama) => {
+            const option = document.createElement('option');
+            option.className = 'bg-white text-start text-xs text-black font-bold';
+            option.textContent = nama;
+            select.appendChild(option);
+        });
+
+        const selectDesa = (event) => {
+            const desa = event.target.value;
+            if(desa !== "PILIH DESA") {
+                document.location.href = 'https://google.com?q=' + desa;
+            }
+        }
+    </script>
+</body>
+
+</html>
